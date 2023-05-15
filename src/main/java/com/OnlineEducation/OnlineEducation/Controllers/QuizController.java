@@ -1,9 +1,9 @@
 package com.OnlineEducation.OnlineEducation.Controllers;
 
-import com.OnlineEducation.OnlineEducation.Models.Instructor;
-import com.OnlineEducation.OnlineEducation.Services.InstructorService;
+import com.OnlineEducation.OnlineEducation.Models.Quiz;
+import com.OnlineEducation.OnlineEducation.Services.QuizService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,12 +11,12 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "instructor")
-public class InstructorRepository {
+@RequestMapping(value = "quiz")
+public class QuizController {
     @Autowired
-    InstructorService instructorService;
+    QuizService quizService;
     @GetMapping(value = "getAll")
-    public List<Instructor> getInstructors() {
-        return instructorService.getAllInstructors();
+    public List<Quiz> getQuizzes() {
+        return quizService.getAllQuizzes();
     }
 }
